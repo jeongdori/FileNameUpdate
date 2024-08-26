@@ -30,8 +30,11 @@ jobs:
         run: dotnet publish -c Release -r ${{ matrix.os }} --self-contained
         working-directory: ./Search
 
+      - name: List build output (Debugging)
+        run: dir ./Search/bin/Release/net8.0/${{ matrix.os }}/publish
+
       - name: Create ZIP file
-        run: Compress-Archive -Path "./bin/Release/net8.0/${{ matrix.os }}/publish/*" -DestinationPath "MyApp-${{ matrix.os }}.zip"
+        run: Compress-Archive -Path "./Search/Search/bin/Release/net8.0/${{ matrix.os }}/publish/*" -DestinationPath "MyApp-${{ matrix.os }}.zip"
 
       - name: Upload Release Asset
         uses: actions/upload-artifact@v2
