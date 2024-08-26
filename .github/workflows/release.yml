@@ -1,0 +1,73 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*" # 태그를 푸시할 때만 실행
+
+jobs:
+  build:
+    runs-on: windows-latest # Windows 환경에서 실행
+
+    strategy:
+      matrix:
+        os: [win-x86, win-x64]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Build and Publish
+        run: dotnet publish -c Release -r ${{ matrix.os }} --self-contained
+
+      - name: Create ZIP file
+        run: Compress-Archive -Path "./bin/Release/net8.0/${{ matrix.os }}/publish/*" -DestinationPath "MyApp-${{ matrix.os }}.zip"
+
+      - name: Upload Release Asset
+        uses: actions/upload-artifact@v2
+        with:
+          name: MyApp-${{ matrix.os }}
+          path: MyApp-${{ matrix.os }}.zip
+
+  release:
+    needs: build
+    runs-on: windows-latest # Windows 환경에서 실행
+    steps:
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset (Win32)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: MyApp-win-x86.zip
+          asset_name: MyApp-win-x86.zip
+          asset_content_type: application/zip
+
+      - name: Upload Release Asset (Win64)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: MyApp-win-x64.zip
+          asset_name: MyApp-win-x64.zip
+          asset_content_type: application/zip
