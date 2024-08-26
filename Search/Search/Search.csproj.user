@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <Compile Update="Form1.cs">
+            <SubType>Form</SubType>
+        </Compile>
+    </ItemGroup>
+    <PropertyGroup>
+    <OutputType>WinExe</OutputType>  <!-- GUI 애플리케이션의 경우 -->
+        <TargetFramework>net8.0</TargetFramework>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>  <!-- 타겟 OS와 아키텍처에 맞게 설정 -->
+        <SelfContained>true</SelfContained>
+        <PublishTrimmed>false</PublishTrimmed>  <!-- 필요시 트리밍을 사용할 수도 있음 -->
+    </PropertyGroup>
+</Project>
