@@ -24,9 +24,11 @@ jobs:
 
       - name: Install dependencies
         run: dotnet restore
+        working-directory: ./Search
 
       - name: Build and Publish
         run: dotnet publish -c Release -r ${{ matrix.os }} --self-contained
+        working-directory: ./Search
 
       - name: Create ZIP file
         run: Compress-Archive -Path "./bin/Release/net8.0/${{ matrix.os }}/publish/*" -DestinationPath "MyApp-${{ matrix.os }}.zip"
