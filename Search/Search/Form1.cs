@@ -182,35 +182,14 @@ namespace Search
 
                 var result = new ConcurrentBag<(string FolderName, string OldFileName, string NewFileName)>();
 
+                ProcessDirectoryFiles(rootPath, fileNameModificationFunc, result);
+
                 var directories = Directory.GetDirectories(rootPath);
 
-                if (directories.Length == 0)
-                {
-                    MessageBox.Show("하위 디렉토리가 존재하지 않구나");
-                    return;
-                }
 
                 Parallel.ForEach(directories, dir =>
                 {
-                    var files = Directory.GetFiles(dir, "*.*");
-                    if (files.Length == 0)
-                    {
-                        result.Add((Path.GetFileName(dir), "No Files", "No Files"));
-                    }
-                    else
-                    {
-                        foreach (var file in files)
-                        {
-                            string fileName = Path.GetFileName(file);
-                            string newFileName = fileNameModificationFunc(fileName);
-                            if (newFileName != fileName)
-                            {
-                                string newPath = Path.Combine(dir, newFileName);
-                                File.Move(file, newPath);
-                                result.Add((Path.GetFileName(dir), fileName, newFileName));
-                            }
-                        }
-                    }
+                    ProcessDirectoryFiles(dir, fileNameModificationFunc, result);
                 });
 
                 var sortedResult = result.OrderBy(r => r.FolderName).ThenBy(r => r.OldFileName).ToList();
@@ -231,6 +210,29 @@ namespace Search
             }
         }
 
+        // 루트 디렉토리의 파일 처리해야함
+        private void ProcessDirectoryFiles(string directoryPath, Func<string, string> fileNameModificationFunc, ConcurrentBag<(string FolderName, string OldFileName, string NewFileName)> result)
+        {
+            var files = Directory.GetFiles(directoryPath, "*.*");
+            if (files.Length == 0)
+            {
+                result.Add((Path.GetFileName(directoryPath), "No Files", "No Files"));
+            }
+            else
+            {
+                foreach (var file in files)
+                {
+                    string fileName = Path.GetFileName(file);
+                    string newFileName = fileNameModificationFunc(fileName);
+                    if (newFileName != fileName)
+                    {
+                        string newPath = Path.Combine(directoryPath, newFileName);
+                        File.Move(file, newPath);
+                        result.Add((Path.GetFileName(directoryPath), fileName, newFileName));
+                    }
+                }
+            }
+        }
 
         // 윈도우 파일명에 금지된 특수문자 확인
         // \ / : * ? " < > |

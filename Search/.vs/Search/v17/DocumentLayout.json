@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\master\\source\\repos\\Search\\",
+  "WorkspaceRootPath": "C:\\Users\\master\\git\\FileNameUpdate\\Search\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F61ED02-27D6-40D7-9E5C-6AB22EDEA06F}|Search\\Search.csproj|c:\\users\\master\\source\\repos\\search\\search\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F61ED02-27D6-40D7-9E5C-6AB22EDEA06F}|Search\\Search.csproj|c:\\users\\master\\git\\filenameupdate\\search\\search\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F61ED02-27D6-40D7-9E5C-6AB22EDEA06F}|Search\\Search.csproj|solutionrelative:search\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F61ED02-27D6-40D7-9E5C-6AB22EDEA06F}|Search\\Search.csproj|C:\\Users\\master\\source\\repos\\Search\\search\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2F61ED02-27D6-40D7-9E5C-6AB22EDEA06F}|Search\\Search.csproj|C:\\Users\\master\\git\\FileNameUpdate\\Search\\search\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F61ED02-27D6-40D7-9E5C-6AB22EDEA06F}|Search\\Search.csproj|solutionrelative:search\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -23,24 +23,24 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\master\\source\\repos\\Search\\Search\\Form1.cs",
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\master\\git\\FileNameUpdate\\Search\\Search\\Form1.cs",
               "RelativeDocumentMoniker": "Search\\Form1.cs",
-              "ToolTip": "C:\\Users\\master\\source\\repos\\Search\\Search\\Form1.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "Search\\Form1.cs [\uB514\uC790\uC778]",
+              "ToolTip": "C:\\Users\\master\\git\\FileNameUpdate\\Search\\Search\\Form1.cs [Design]",
+              "RelativeToolTip": "Search\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-08T02:07:53.414Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\master\\source\\repos\\Search\\Search\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\master\\git\\FileNameUpdate\\Search\\Search\\Form1.cs",
               "RelativeDocumentMoniker": "Search\\Form1.cs",
-              "ToolTip": "C:\\Users\\master\\source\\repos\\Search\\Search\\Form1.cs",
+              "ToolTip": "C:\\Users\\master\\git\\FileNameUpdate\\Search\\Search\\Form1.cs",
               "RelativeToolTip": "Search\\Form1.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAAC0AAAAUAAAA",
+              "ViewState": "AQIAAKYAAAAAAAAAAAAuwK4AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-08T02:02:12.133Z",
               "EditorCaption": ""

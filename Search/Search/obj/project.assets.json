@@ -380,7 +380,7 @@
         }
       }
     },
-    "net8.0-windows7.0/win-x86": {
+    "net8.0-windows7.0/win-x64": {
       "EPPlus/7.2.1": {
         "type": "package",
         "dependencies": {
@@ -1444,11 +1444,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\master\\source\\repos\\Search\\Search\\Search.csproj",
+      "projectUniqueName": "C:\\Users\\master\\git\\FileNameUpdate\\Search\\Search\\Search.csproj",
       "projectName": "Search",
-      "projectPath": "C:\\Users\\master\\source\\repos\\Search\\Search\\Search.csproj",
+      "projectPath": "C:\\Users\\master\\git\\FileNameUpdate\\Search\\Search\\Search.csproj",
       "packagesPath": "C:\\Users\\master\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\master\\source\\repos\\Search\\Search\\obj\\",
+      "outputPath": "C:\\Users\\master\\git\\FileNameUpdate\\Search\\Search\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\master\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1500,15 +1500,15 @@
         "warn": true,
         "downloadDependencies": [
           {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
             "version": "[8.0.7, 8.0.7]"
           },
           {
-            "name": "Microsoft.NETCore.App.Runtime.win-x86",
+            "name": "Microsoft.NETCore.App.Runtime.win-x64",
             "version": "[8.0.7, 8.0.7]"
           },
           {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
             "version": "[8.0.7, 8.0.7]"
           }
         ],
@@ -1524,7 +1524,7 @@
       }
     },
     "runtimes": {
-      "win-x86": {
+      "win-x64": {
         "#import": []
       }
     }
