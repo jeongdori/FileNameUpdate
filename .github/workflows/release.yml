@@ -31,7 +31,7 @@ jobs:
         working-directory: ./Search
 
       - name: Create ZIP file
-        run: Compress-Archive -Path "./Search/Search/bin/Release/net8.0/${{ matrix.os }}/publish/*" -DestinationPath "MyApp-${{ matrix.os }}.zip"
+        run: Compress-Archive -Path "./Search/Search/bin/Release/net8.0-windows/${{ matrix.os }}/publish/*" -DestinationPath "MyApp-${{ matrix.os }}.zip"
 
       - name: Upload Release Asset
         uses: actions/upload-artifact@v2
