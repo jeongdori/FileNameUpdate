@@ -33,7 +33,7 @@ jobs:
       - name: Create ZIP file
         run: Compress-Archive -Path "./Search/Search/bin/Release/net8.0-windows/${{ matrix.os }}/publish/*" -DestinationPath "MyApp-${{ matrix.os }}.zip"
 
-      - name: Upload Release Asset
+      - name: Upload ZIP as Artifact
         uses: actions/upload-artifact@v2
         with:
           name: MyApp-${{ matrix.os }}
@@ -43,6 +43,18 @@ jobs:
     needs: build
     runs-on: windows-latest # Windows 환경에서 실행
     steps:
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: MyApp-win-x86
+          path: .
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: MyApp-win-x64
+          path: .
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
